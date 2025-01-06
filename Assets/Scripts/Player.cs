@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         winText.SetActive(false);
+        joystick.CanMove = true;
         
     }
 
@@ -43,16 +44,28 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Target")
+        if (script.remainingTime > 0)
         {
-            score++;
-            Destroy(collision.gameObject);
-            if (score == winScore ) //&& remainingTime>=0 
+            if (collision.gameObject.tag == "Target")
             {
-                winText.SetActive(true);
-                //disable joystick
+                score++;
+                Destroy(collision.gameObject);
+                if (score == winScore) //&& remainingTime>=0 
+                {
+                    winText.SetActive(true);
+                }
+
             }
 
         }
+        else
+        {
+            //show Game Over Text
+            //Show menu (repeat, main menu, store)
+            //freeze player
+            joystick.CanMove = false;
+        }
+
+
     }
 }
