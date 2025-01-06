@@ -17,7 +17,6 @@ public class FixedJoystick : Joystick
         if (!CanMove)
         {
             // Stop input when CanMove is false
-            // made input and handle protected instead of private in JoyStic.cs
             input = Vector2.zero;
             handle.anchoredPosition = Vector2.zero;
             return;
