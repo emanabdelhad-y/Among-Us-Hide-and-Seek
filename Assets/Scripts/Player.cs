@@ -25,7 +25,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //update timer
+        if (script.remainingTime == 0)
+        {
+            script.remainingTime = 0;
+            joystick.CanMove = false;
+        }
     }
 
     public void FixedUpdate()
@@ -35,11 +39,7 @@ public class Player : MonoBehaviour
 
         transform.Translate(xInput, yInput,0);
 
-        if (script.remainingTime == 0)
-        {
-            script.remainingTime = 0;
-            joystick.CanMove = false;
-        }
+
 
     }
 
