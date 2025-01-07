@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //disabling the movement after time ends
         if (script.remainingTime == 0)
         {
             script.remainingTime = 0;
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
 
         if (xInput != 0 || yInput != 0)
         {
-            animator.SetFloat("animatorMoving", Mathf.Abs(xInput+yInput));
+            animator.SetFloat("animatorMoving", (Mathf.Abs(xInput) + Mathf.Abs(yInput)) );
         }
 
         //when joystick released, set animator speed to 0
@@ -50,11 +51,13 @@ public class Player : MonoBehaviour
 
     public void FixedUpdate()
     {
+        //changing the location of the character when moving
         xInput = joystick.Horizontal * moveSpeed;
         yInput = joystick.Vertical * moveSpeed;
 
         transform.Translate(xInput, yInput,0);
 
+        //for mirroring the character
         if (xInput > 0)
         {
             gameObject.transform.localScale = new Vector3 ((float)0.14, (float)0.14, (float)0.14);
@@ -68,6 +71,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //to check if player is out of time or not
         if (script.remainingTime > 0)
         {
             if (collision.gameObject.tag == "Target")
