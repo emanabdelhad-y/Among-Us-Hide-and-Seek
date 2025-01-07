@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public FixedJoystick joystick;    
     public float moveSpeed;
-    public GameObject winText; 
     int score = 0;
     public int winScore;
+
     float xInput, yInput;
+    
+    public FixedJoystick joystick;    
+    public GameObject winText; 
     public Counter script;
+    public Animator animator;
 
 
     // Start is called before the first frame update
@@ -30,6 +33,29 @@ public class Player : MonoBehaviour
             script.remainingTime = 0;
             joystick.CanMove = false;
         }
+
+        if (xInput != 0 || yInput != 0)
+        {
+            animator.SetFloat("animatorMoving", Mathf.Abs(xInput+yInput));
+        }
+
+        //when joystick released, set animator speed to 0
+        if (joystick.Horizontal + joystick.Vertical == 0) {
+            animator.SetFloat("animatorMoving", 0);
+
+        }
+
+
+        /*
+        if (xInput != 0)
+        {
+            animator.SetFloat("animatorMoving", Mathf.Abs(xInput));
+            
+        }
+        if (yInput != 0)
+        {
+            animator.SetFloat("animatorMoving", Mathf.Abs(yInput));
+        }*/
     }
 
     public void FixedUpdate()
@@ -39,7 +65,14 @@ public class Player : MonoBehaviour
 
         transform.Translate(xInput, yInput,0);
 
-
+        if (xInput > 0)
+        {
+            gameObject.transform.localScale = new Vector3 ((float)0.14, (float)0.14, (float)0.14);
+        }
+        else if (xInput < 0) 
+        {
+            gameObject.transform.localScale = new Vector3((float)-0.14, (float)0.14, (float)0.14);
+        }
 
     }
 

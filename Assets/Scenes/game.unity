@@ -4633,6 +4633,7 @@ GameObject:
   - component: {fileID: 724533283}
   - component: {fileID: 724533286}
   - component: {fileID: 724533287}
+  - component: {fileID: 724533288}
   m_Layer: 0
   m_Name: amongUsMainPlayer
   m_TagString: Untagged
@@ -4708,7 +4709,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7da414f9bcc61464a98b8dbf3e121b02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1eb7f4a5eb750bd46b34a91d5c5d280f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4729,7 +4730,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.3141, y: -1.7853, z: -0.23956}
-  m_LocalScale: {x: 0.14192411, y: 0.14783762, z: 0.5913505}
+  m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
@@ -4747,11 +4748,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3681b7e521978048abd575ff02361cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: {fileID: 1135407694}
   moveSpeed: 0.06
-  winText: {fileID: 1423774274}
   winScore: 4
+  joystick: {fileID: 1135407694}
+  winText: {fileID: 1423774274}
   script: {fileID: 1832723718}
+  animator: {fileID: 724533288}
 --- !u!70 &724533287
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4787,6 +4789,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 5.9999995, y: 6.6299996}
   m_Direction: 0
+--- !u!95 &724533288
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724533282}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2f07c2f401337f343aaa9d45f018244a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &730382762
 GameObject:
   m_ObjectHideFlags: 0
@@ -10494,7 +10517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 312.4, y: 151}
+  m_AnchoredPosition: {x: 366.6, y: 151}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1832723718
@@ -10510,7 +10533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDownText: {fileID: 1832723719}
-  remainingTime: 10
+  remainingTime: 30
 --- !u!114 &1832723719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10531,10 +10554,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'Timer
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 27a8cb8db39224c45a0f0ef4867ea08b, type: 2}
+  m_sharedMaterial: {fileID: -705806959899516097, guid: 27a8cb8db39224c45a0f0ef4867ea08b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12819,7 +12844,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -254, y: 154}
+  m_AnchoredPosition: {x: -261.2, y: 151.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106263973
@@ -12842,10 +12867,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'Score
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 27a8cb8db39224c45a0f0ef4867ea08b, type: 2}
+  m_sharedMaterial: {fileID: -705806959899516097, guid: 27a8cb8db39224c45a0f0ef4867ea08b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
