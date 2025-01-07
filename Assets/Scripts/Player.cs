@@ -46,16 +46,6 @@ public class Player : MonoBehaviour
         }
 
 
-        /*
-        if (xInput != 0)
-        {
-            animator.SetFloat("animatorMoving", Mathf.Abs(xInput));
-            
-        }
-        if (yInput != 0)
-        {
-            animator.SetFloat("animatorMoving", Mathf.Abs(yInput));
-        }*/
     }
 
     public void FixedUpdate()
