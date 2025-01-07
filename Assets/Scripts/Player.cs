@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public FixedJoystick joystick;    
     public float moveSpeed;
-    public GameObject winText;
+    public GameObject winText; 
     int score = 0;
     public int winScore;
     float xInput, yInput;
@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
         if (script.remainingTime == 0)
         {
             script.remainingTime = 0;
+            joystick.CanMove = false;
         }
 
     }
@@ -50,20 +51,13 @@ public class Player : MonoBehaviour
             {
                 score++;
                 Destroy(collision.gameObject);
-                if (score == winScore) //&& remainingTime>=0 
+                if (score == winScore)
                 {
                     winText.SetActive(true);
                 }
 
             }
 
-        }
-        else
-        {
-            //show Game Over Text
-            //Show menu (repeat, main menu, store)
-            //freeze player
-            joystick.CanMove = false;
         }
 
 
