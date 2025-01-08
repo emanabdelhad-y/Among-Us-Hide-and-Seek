@@ -84,6 +84,8 @@ public class Player : MonoBehaviour
                 if (score == winScore)
                 {
                     winText.SetActive(true);
+                    joystick.CanMove = false;
+                    script.stop = true;
                 }
 
             }
