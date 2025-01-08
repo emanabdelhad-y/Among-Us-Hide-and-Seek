@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     int score = 0;
     public int winScore;
+    bool isColliding; //optional to make it slide around borders without walking SFX
 
     float xInput, yInput;
     
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     public GameObject winText; 
     public Counter script;
     public Animator animator;
+    public AudioManager audioManager;
 
 
     // Start is called before the first frame update
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
         {
             animator.SetFloat("animatorMoving", (Mathf.Abs(xInput) + Mathf.Abs(yInput)) );
         }
+        audioManager.PlayWalkingSound(audioManager.walking, xInput, yInput); //add isColliding here
 
         //when joystick released, set animator speed to 0
         if (joystick.Horizontal + joystick.Vertical == 0) {
