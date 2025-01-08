@@ -6,9 +6,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float moveSpeed;
-    int score = 0;
+    //int score = 0;
     public int winScore;
-    bool isColliding; //optional to make it slide around borders without walking SFX
+    //bool isColliding; //optional to make it slide around borders without walking SFX
 
     float xInput, yInput;
     
@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public Counter script;
     public Animator animator;
     public AudioManager audioManager;
+    public ScoreCounter scoreCounter;
 
 
     // Start is called before the first frame update
@@ -79,9 +80,10 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.tag == "Target")
             {
-                score++;
+                scoreCounter.score += 1;
                 Destroy(collision.gameObject);
-                if (score == winScore)
+
+                if (scoreCounter.score == winScore)
                 {
                     winText.SetActive(true);
                     joystick.CanMove = false;
