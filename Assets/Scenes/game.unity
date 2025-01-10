@@ -2893,8 +2893,8 @@ GameObject:
   m_Component:
   - component: {fileID: 469017117}
   - component: {fileID: 469017116}
-  - component: {fileID: 469017119}
   - component: {fileID: 469017118}
+  - component: {fileID: 469017119}
   m_Layer: 0
   m_Name: amongUsYellow
   m_TagString: Target
@@ -5260,6 +5260,7 @@ MonoBehaviour:
   script: {fileID: 1832723718}
   animator: {fileID: 724533288}
   audioManager: {fileID: 1746175787}
+  scoreCounter: {fileID: 2106263975}
 --- !u!70 &724533287
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10806,8 +10807,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1769677327}
   - component: {fileID: 1769677326}
-  - component: {fileID: 1769677329}
   - component: {fileID: 1769677328}
+  - component: {fileID: 1769677329}
   m_Layer: 0
   m_Name: amongUsWhite
   m_TagString: Target
@@ -11255,6 +11256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countDownText: {fileID: 1832723719}
   remainingTime: 30
+  stop: 0
 --- !u!114 &1832723719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13804,6 +13806,7 @@ GameObject:
   - component: {fileID: 2106263972}
   - component: {fileID: 2106263974}
   - component: {fileID: 2106263973}
+  - component: {fileID: 2106263975}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -13827,8 +13830,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -261.2, y: 151.4}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -224.11252, y: 151.4}
+  m_SizeDelta: {x: 274.175, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106263973
 MonoBehaviour:
@@ -13915,7 +13918,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.5115051, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -13929,6 +13932,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106263971}
   m_CullTransparentMesh: 1
+--- !u!114 &2106263975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106263971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20aa6c9bc36362741a67f26ef09e28f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 2106263973}
 --- !u!1 &2107370003
 GameObject:
   m_ObjectHideFlags: 0
