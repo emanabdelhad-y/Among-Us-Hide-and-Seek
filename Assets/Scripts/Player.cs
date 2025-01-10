@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
     public float moveSpeed;
     //int score = 0;
@@ -31,6 +32,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (!IsOwner)
+        {
+            joystick.CanMove = false;
+        }
+
         //disabling the movement after time ends
         if (script.remainingTime == 0)
         {
